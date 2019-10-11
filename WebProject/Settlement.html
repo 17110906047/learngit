@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap/3.3.6/bootstrap.min.css" />
+		<script src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/Main.css" />
+		<style>
+			
+		</style>
+		<script>
+			$(function(){
+				$("img.messageImg").click(function(){
+					$(this).hide();
+					$("span.leaveMessageSpan").show();
+					$("div.messageDiv").css("height","100px");
+				});
+				$("span.leaveMessageSpan textarea").keyup(function(){
+					var num=$("span.wordNumber").text();
+					num=parseInt(num);
+					var length=$(this).val().length;
+					if(length>=200){
+						var str=$(this).val();
+						str=str.substring(0,200);
+						$(this).val(str);
+						length=200;
+					}
+					num=200-length;
+					$("span.wordNumber").html(num);
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<nav class="top">
+			<a href="http://127.0.0.1:8020/WebProject/Main.html?__hbt=1570794429693#nowhere">
+				<span class="glyphicon glyphicon-home redColor"></span>
+				天猫首页
+			</a>
+			<span>喵，欢迎来到天猫</span>
+			<a href="http://127.0.0.1:8020/WebProject/Login.html?__hbt=1570720681801">
+				请登录
+			</a>
+			<a href="http://127.0.0.1:8020/WebProject/Registered.html?__hbt=1570720639807">
+				免费注册
+			</a>
+			<a style="float: right;" href="http://127.0.0.1:8020/WebProject/BuyCar.html?__hbt=1570618067337#nowhere">
+				<span class="glyphicon glyphicon-shopping-cart redColor"></span>
+				购物车
+			</a>
+			<a href="http://127.0.0.1:8020/WebProject/MyOrder.html?__hbt=1570673564791" style="float: right;">
+				我的订单
+			</a>
+		</nav>
+		
+		<div class="SettlementDiv">
+			<div class="SettlementTitleImg">
+				<img src="http://how2j.cn/tmall/img/site/simpleLogo.png" style="float: left;"/>
+				<img src="http://how2j.cn/tmall/img/site/buyflow.png" style="float: right;"/>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="sendAddressDiv">
+				<div class="addressDiv">输入收货地址</div>
+				<div class="addressInfoDiv">
+					<table class="addressInfoTable">
+						<tr>
+							<td class="firstColumn">详细地址<span class="redStar">*</span></td>
+							<td>
+								<textarea name="address" placeholder="建议您如实填写详细收收货地址，例如街道名称，门牌号码，楼层和房间号等信息"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>邮政编码</td>
+							<td>
+								<input type="text" placeholder="如果您不清楚邮递区号，请填写000000" />
+							</td>
+						</tr>
+						<tr>
+							<td>收货人姓名<span class="redStar">*</span></td>
+							<td><input type="text" placeholder="长度不超过25个字符"></td>
+						</tr>
+						<tr>
+							<td>手机号码<span class="redStar">*</span></td>
+							<td>
+								<input type="text" placeholder="请输入11位手机号码" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="confirmOrderInfoDiv">
+				<div class="confirmInfo">确认订单信息</div>
+				<div class="OrderInfoDiv">
+					<table class="OrderInfoTable">
+						<thead>
+							<tr>
+								<th colspan="2" class="productListTableFirstColumn">
+									<img src="http://how2j.cn/tmall/img/site/tmallbuy.png" class="tmallbuy">
+			                        <a href="#nowhere" class="marketLink">店铺：天猫店铺</a>
+			                        <a href="#nowhere" class="wangwanglink"> <span class="wangwangGif"></span> </a>
+								</th>
+								<th>单价</th>
+								<th>数量</th>
+								<th>小计</th>
+								<th>配送方式</th>
+							</tr>
+							<tr class="rowborder">
+			                    <th colspan="2"></th>
+			                    <th></th>
+			                    <th></th>
+			                    <th></th>
+			                    <th></th>
+			                </tr>
+						</thead>
+						<tr class="orderItemTR">
+							<td class="orderItemFirstTD">
+								<img width="20px"  src="http://how2j.cn/tmall/img/productSingle_middle/4206.jpg" class="orderItemImg"/>
+							</td>
+							<td class="orderItemProductInfo">
+								<div class="InfoInnerDiv">
+									<div class="linkDiv">
+										<a class="orderLink">Philips/飞利浦 HR1897/30破壁微榨原汁机 多功能家用果汁榨汁机</a>
+									</div>
+									<div class="img">
+										<img title="支持信用卡支付" src="http://how2j.cn/tmall/img/site/creditcard.png">
+			                            <img title="消费者保障服务,承诺7天退货" src="http://how2j.cn/tmall/img/site/7day.png">
+			                            <img title="消费者保障服务,承诺如实描述" src="http://how2j.cn/tmall/img/site/promise.png">
+									</div>
+								</div>
+							</td>
+							<td>
+								<span class="singlePrice">￥3,824.16</span>
+							</td>
+							<td>
+								<span class="number">1</span>
+							</td>
+							<td>
+								<span class="sumPrice">￥3,824.16</span>
+							</td>
+							<td class="orderItemLastTD">
+								<label class="orderItemDeliveryLabel">
+									<input type="radio" checked="checked" /><span class="sendWay">普通配送</span>
+								</label>
+								<select class="orderItemDeliverySelect">
+									<option>快递 免邮费</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="leaveMessageDiv">
+					<div class="messageDiv" style="float: left;">
+						<span class="message">给卖家留言:</span>
+						<span>
+							<img class="messageImg" src="http://how2j.cn/tmall/img/site/leaveMessage.png" />
+						</span>	
+						<span class="leaveMessageSpan" style="display: none;">
+							<textarea style="border-color:orange ;" class="leaveMessageTextarea" name="userMessage"></textarea>
+							<div>
+								<span>还可以输入<span class="wordNumber">200</span>个字符</span>
+							</div>
+						</span>
+					</div>
+					<div style="float: right;">店铺合计(含运费)：<span class="money">￥3,824.16</span></div>
+					<div style="clear: both;"></div>
+				</div>
+				<div class="realPayDiv" style="float: right;">
+					<span class="realPay">实付款<span class="realPayMoney">￥3,824.16</span></span>
+					
+				</div>
+				<div style="clear: both;"></div>
+				<div class="subBtnDiv" style="float: right;">
+					<a class="subLink" href="http://127.0.0.1:8020/WebProject/Settlement.html?__hbt=1570703664895"><button class="sumbtn btn btn-danger">提交订单</button></a>
+					
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footerimg" style="text-align: center;">
+				<a href="#nowhere">
+               		<img src="http://how2j.cn/tmall/img/site/ensure.png">
+            	</a>
+			</div>
+			<div class="footerHref">
+				<div class="footHref1">
+				<span>购物指南</span>
+					<a href="#nowhere">免费注册</a>
+					<a href="#nowhere">开通支付宝</a>
+					<a href="#nowhere">支付宝充值</a>
+				</div>
+				<div class="footHref1">
+					<span>天猫保障</span>
+					<a href="#nowhere">发票保障</a>
+					<a href="#nowhere">售后规则</a>
+					<a href="#nowhere">缺货赔付</a>
+				</div>
+				<div class="footHref1">
+					<span>支付方式</span>
+					<a href="#nowhere">快捷支付</a>
+					<a href="#nowhere">信用卡</a>
+					<a href="#nowhere">蚂蚁花呗</a>
+					<a href="#nowhere">货到付款</a>
+				</div>
+				<div class="footHref1">
+					<span>商家服务</span>
+					<a href="#nowhere">商家入驻</a>
+					<a href="#nowhere">商家中心</a>
+					<a href="#nowhere">天猫智库</a>
+					<a href="#nowhere">天猫规则</a>
+					<a href="#nowhere">物流服务</a>
+					<a href="#nowhere">喵言喵语</a>
+					<a href="#nowhere">运营服务</a>
+				</div>
+				<div class="footHref1">
+					<span>手机天猫</span>
+					<img src="http://how2j.cn/tmall/img/site/ma.png">
+				</div>
+			</div>
+		</div>
+		<div class="footer2" style="margin-top: 204px;">
+			<img src="http://how2j.cn/tmall/img/site/cateye.png" class="Catimg"/>
+			<div class="footer2Child">
+				<div class="footWordHref">
+					<div class="footWordHref1">
+						<a href="#nowhere">关于天猫</a>
+						<a href="#nowhere">帮助中心</a>
+						<a href="#nowhere">开放平台</a>
+						<a href="#nowhere">诚聘英才</a>
+						<a href="#nowhere">联系我们</a>
+						<a href="#nowhere">网站合法</a>
+						<a href="#nowhere">法律声明</a>
+						<a href="#nowhere">知识产权</a>
+						<a href="#nowhere">廉政举报</a>
+					</div>
+					<div class="footWordHref1">
+						<a href="#nowhere">阿里巴巴集团</a><span class="splish">|</span>
+						<a href="#nowhere">淘宝网</a><span class="splish">|</span>
+						<a href="#nowhere">天猫</a><span class="splish">|</span>
+						<a href="#nowhere">聚划算</a><span class="splish">|</span>
+						<a href="#nowhere">全球速卖通</a><span class="splish">|</span>
+						<a href="#nowhere">阿里巴巴国际交易市场</a><span class="splish">|</span>
+						<a href="#nowhere">1688</a><span class="splish">|</span>
+						<a href="#nowhere">阿里妈妈</a><span class="splish">|</span>
+						<a href="#nowhere">阿里旅行</a><span class="splish">|</span>
+						<a href="#nowhere">阿里云计算</a><span class="splish">|</span>
+						<a href="#nowhere">阿里通信</a><span class="splish">|</span>
+						<a href="#nowhere">YunOS</a><span class="splish">|</span>
+						<a href="#nowhere">万网</a><span class="splish">|</span>
+						<a href="#nowhere">高德</a><span class="splish">|</span>
+						<a href="#nowhere">优视</a><span class="splish">|</span>
+						<a href="#nowhere">友盟</a><span class="splish">|</span>
+						<a href="#nowhere">虾米</a><span class="splish">|</span>
+						<a href="#nowhere">天天动听</a><span class="splish">|</span>
+						<a href="#nowhere">来往</a><span class="splish">|</span>
+						<a href="#nowhere">钉钉</a><span class="splish">|</span>
+						<a href="#nowhere">支付宝</a>
+					</div>
+				</div>
+				<div class="footWord">
+				<div class="footWord1">
+					<span>
+						增值电信业务经营许可证： 浙B2-20110446 网络文化经营许可证：浙网文[2015]0295-065号
+						 互联网医疗保健信息服务 审核同意书 浙卫网审【2014】6号 互联网药品信息服务资质证书编号：浙-（经营性）-2012-0005
+					</span><br />
+					<div class="copyRightYear">
+						© 2003-2016 TMALL.COM 版权所有
+					</div>
+					<span>
+						<img src="http://how2j.cn/tmall/img/site/copyRight1.jpg">
+                		<img src="http://how2j.cn/tmall/img/site/copyRight2.jpg">
+					</span>
+				</div>
+			</div>
+			</div>
+		</div>
+	</body>
+</html>
